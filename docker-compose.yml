@@ -1,0 +1,16 @@
+version: '3.9'
+services: 
+  dumper:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "9999:9999"
+    depends_on:
+      - db
+  proxy:
+    build: proxy
+    ports:
+      - 80:80
+    depends_on: 
+      - dumper
