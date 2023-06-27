@@ -6,8 +6,6 @@ services:
       dockerfile: Dockerfile
     ports: 
       - "9999:9999"
-    depends_on:
-      - db
   proxy:
     build: proxy
     ports:
